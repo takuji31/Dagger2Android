@@ -1,0 +1,74 @@
+<root>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21.Builder java.lang.Object newInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21.Builder void setMediaId(java.lang.Object, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21 android.net.Uri getIconUri(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21.Builder void setExtras(java.lang.Object, android.os.Bundle) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21 java.lang.CharSequence getDescription(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21.Builder void setSubtitle(java.lang.Object, java.lang.CharSequence) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21.Builder java.lang.Object build(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaMetadataCompatApi21.Builder void putRating(java.lang.Object, java.lang.String, java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21 android.os.Bundle getExtras(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaMetadataCompatApi21.Builder java.lang.Object build(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaMetadataCompatApi21.Builder void putLong(java.lang.Object, java.lang.String, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21.Builder void setTitle(java.lang.Object, java.lang.CharSequence) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21 android.graphics.Bitmap getIconBitmap(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21 java.lang.CharSequence getTitle(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21.Builder void setIconBitmap(java.lang.Object, android.graphics.Bitmap) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21 java.lang.CharSequence getSubtitle(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21 java.lang.String getMediaId(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaMetadataCompatApi21.Builder void putBitmap(java.lang.Object, java.lang.String, android.graphics.Bitmap) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21 void writeToParcel(java.lang.Object, android.os.Parcel, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaMetadataCompatApi21.Builder java.lang.Object newInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21.Builder void setDescription(java.lang.Object, java.lang.CharSequence) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaMetadataCompatApi21.Builder void putText(java.lang.Object, java.lang.String, java.lang.CharSequence) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaDescriptionCompatApi21.Builder void setIconUri(java.lang.Object, android.net.Uri) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.media.MediaMetadataCompatApi21.Builder void putString(java.lang.Object, java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

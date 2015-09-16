@@ -1,0 +1,35 @@
+<root>
+    <item name='android.support.design.internal.ScrimInsetsFrameLayout ScrimInsetsFrameLayout(android.content.Context, android.util.AttributeSet) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.design.internal.ScrimInsetsFrameLayout ScrimInsetsFrameLayout(android.content.Context) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.design.internal.NavigationMenuPresenter android.os.Parcelable onSaveInstanceState()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.design.internal.NavigationMenuPresenter void onRestoreInstanceState(android.os.Parcelable) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.design.internal.NavigationMenuPresenter void initForMenu(android.content.Context, android.support.v7.internal.view.menu.MenuBuilder) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.design.internal.NavigationMenu android.view.SubMenu addSubMenu(int, int, int, java.lang.CharSequence)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.design.internal.NavigationMenuItemView void initialize(android.support.v7.internal.view.menu.MenuItemImpl, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.design.internal.NavigationMenuItemView NavigationMenuItemView(android.content.Context, android.util.AttributeSet, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.design.internal.NavigationMenuItemView NavigationMenuItemView(android.content.Context) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.design.internal.NavigationMenuItemView NavigationMenuItemView(android.content.Context, android.util.AttributeSet) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.design.internal.ScrimInsetsFrameLayout ScrimInsetsFrameLayout(android.content.Context, android.util.AttributeSet, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

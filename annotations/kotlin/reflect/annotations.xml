@@ -1,0 +1,23 @@
+<root>
+    <item name='kotlin.reflect.KMutableMemberExtensionProperty void set(T, E, R) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='kotlin.reflect.KMemberExtensionProperty R get(T, E) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='kotlin.reflect.KMutableMemberProperty void set(T, R) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='kotlin.reflect.KClass java.util.Collection&lt;kotlin.reflect.KMemberProperty&lt;T,?&gt;&gt; getProperties()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='kotlin.reflect.KCallable java.lang.String getName()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='kotlin.reflect.KMemberProperty R get(T) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='kotlin.reflect.KClass java.util.Collection&lt;kotlin.reflect.KMemberExtensionProperty&lt;T,?,?&gt;&gt; getExtensionProperties()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

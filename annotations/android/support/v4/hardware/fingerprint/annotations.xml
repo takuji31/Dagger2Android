@@ -1,0 +1,11 @@
+<root>
+    <item name='android.support.v4.hardware.fingerprint.FingerprintManagerCompatApi23 boolean isHardwareDetected(android.content.Context) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.hardware.fingerprint.FingerprintManagerCompatApi23 boolean hasEnrolledFingerprints(android.content.Context) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.hardware.fingerprint.FingerprintManagerCompatApi23 void authenticate(android.content.Context, android.support.v4.hardware.fingerprint.FingerprintManagerCompatApi23.CryptoObject, int, java.lang.Object, android.support.v4.hardware.fingerprint.FingerprintManagerCompatApi23.AuthenticationCallback, android.os.Handler) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>
