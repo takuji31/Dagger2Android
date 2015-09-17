@@ -8,7 +8,7 @@ public object Lifecycles {
     fun onDestroy(vararg lifecycles: OnDestroyLifecycle): OnDestroyLifecycle {
         return object : OnDestroyLifecycle {
             override fun onDestroy() {
-                lifecycles.forEach { onDestroy() }
+                lifecycles.forEach { it.onDestroy() }
             }
         }
     }
