@@ -11,27 +11,27 @@ import kotlin.properties.Delegates
  */
 public abstract class DaggerAppCompatActivity<T : Any>() : AppCompatActivity(), CreateComponentListener<T>, FragmentStore<DaggerAppCompatActivity.RetainFragment<T>> {
 
-    val delegate: DaggerActivityDelegate<T, RetainFragment<T>> = DaggerActivityDelegate(this, this)
+    val daggerDelegate: DaggerActivityDelegate<T, RetainFragment<T>> = DaggerActivityDelegate(this, this)
 
     public val component: T
-        get() = delegate.component
+        get() = daggerDelegate.component
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         handleIntent(intent)
 
-        delegate.onCreate()
+        daggerDelegate.onCreate()
 
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
-        delegate.onPostCreate()
+        daggerDelegate.onPostCreate()
     }
 
     override fun onDestroy() {
-        delegate.onDestroy()
+        daggerDelegate.onDestroy()
         super.onDestroy()
     }
 
