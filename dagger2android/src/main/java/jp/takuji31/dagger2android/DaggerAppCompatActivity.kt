@@ -17,22 +17,22 @@ public abstract class DaggerAppCompatActivity<T : Any>() : AppCompatActivity(), 
         get() = delegate.component
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super<AppCompatActivity>.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState)
 
-        handleIntent(getIntent())
+        handleIntent(intent)
 
         delegate.onCreate()
 
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
-        super<AppCompatActivity>.onPostCreate(savedInstanceState)
+        super.onPostCreate(savedInstanceState)
         delegate.onPostCreate()
     }
 
     override fun findFragment(): RetainFragment<T>? {
-        @suppress("UNCHECKED_CAST")
-        return getSupportFragmentManager().findFragmentByTag(TAG) as? RetainFragment<T>
+        @Suppress("UNCHECKED_CAST")
+        return supportFragmentManager.findFragmentByTag(TAG) as? RetainFragment<T>
     }
 
     override fun createFragment(): RetainFragment<T> {
@@ -40,7 +40,7 @@ public abstract class DaggerAppCompatActivity<T : Any>() : AppCompatActivity(), 
     }
 
     override fun addFragment(fragment: RetainFragment<T>) {
-        getSupportFragmentManager().beginTransaction().add(fragment, TAG).commit()
+        supportFragmentManager.beginTransaction().add(fragment, TAG).commit()
     }
 
     abstract fun handleIntent(intent: Intent)
@@ -49,7 +49,7 @@ public abstract class DaggerAppCompatActivity<T : Any>() : AppCompatActivity(), 
           override lateinit var component: T
 
         init {
-            setRetainInstance(true)
+            retainInstance = true
         }
     }
 
