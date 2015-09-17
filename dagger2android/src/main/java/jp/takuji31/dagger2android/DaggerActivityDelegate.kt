@@ -6,16 +6,16 @@ import kotlin.properties.Delegates
  * Dagger lifecycle delegation class for Activity
  * @author Takuji Nishibayashi
  */
-public class DaggerActivityDelegate<C, F : ComponentStore<C>>(
+public class DaggerActivityDelegate<C : Any, F : ComponentStore<C>>(
         val createComponentListener: CreateComponentListener<C>, val fragmentStore: FragmentStore<F>) {
-    private var fragment: F by Delegates.notNull()
+    private lateinit var fragment: F
 
     public val component: C
         get() = fragment.component
 
     public fun onCreate() {
 
-        @suppress("UNCHECKED_CAST")
+        @Suppress("UNCHECKED_CAST")
         val f = fragmentStore.findFragment()
         if (f != null) {
             fragment = f

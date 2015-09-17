@@ -9,7 +9,7 @@ import kotlin.properties.Delegates
 /**
  * @author Takuji Nishibayashi
  */
-public abstract class DaggerAppCompatActivity<T>() : AppCompatActivity(), CreateComponentListener<T>, FragmentStore<DaggerAppCompatActivity.RetainFragment<T>> {
+public abstract class DaggerAppCompatActivity<T : Any>() : AppCompatActivity(), CreateComponentListener<T>, FragmentStore<DaggerAppCompatActivity.RetainFragment<T>> {
 
     val delegate: DaggerActivityDelegate<T, RetainFragment<T>> = DaggerActivityDelegate(this, this)
 
@@ -45,8 +45,8 @@ public abstract class DaggerAppCompatActivity<T>() : AppCompatActivity(), Create
 
     abstract fun handleIntent(intent: Intent)
 
-    public class RetainFragment<T> : Fragment(), ComponentStore<T> {
-        override var component: T by Delegates.notNull()
+    public class RetainFragment<T : Any> : Fragment(), ComponentStore<T> {
+          override lateinit var component: T
 
         init {
             setRetainInstance(true)
