@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "jp.takuji31.dagger2android"
+        applicationId "jp.takuji31.dagger2android.example"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
@@ -17,6 +18,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 dependencies {
@@ -25,4 +29,23 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
     compile project(':dagger2android')
+    compile 'com.google.dagger:dagger:2.0.1'
+    kapt 'com.google.dagger:dagger-compiler:2.0.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile 'javax.annotation:javax.annotation-api:1.2'
+}
+buildscript {
+    ext.kotlin_version = '0.13.1513'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+repositories {
+    mavenCentral()
+}
+kapt {
+    generateStubs = true
 }

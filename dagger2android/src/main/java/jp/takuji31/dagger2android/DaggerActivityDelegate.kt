@@ -1,6 +1,6 @@
 package jp.takuji31.dagger2android
 
-import kotlin.properties.Delegates
+import jp.takuji31.dagger2android.component.ActivityComponent
 
 /**
  * Dagger lifecycle delegation class for Activity
@@ -28,6 +28,13 @@ public class DaggerActivityDelegate<C : Any, F : ComponentStore<C>>(
     public fun onPostCreate() {
         if (!fragmentStore.hasFragment()) {
             fragmentStore.addFragment(fragment)
+        }
+    }
+
+    public fun onDestroy() {
+        val component = component
+        if (component is ActivityComponent) {
+            component.onDestroyLifecycle.onDestroy()
         }
     }
 }

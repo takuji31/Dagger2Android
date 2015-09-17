@@ -1,4 +1,4 @@
-package jp.takuji31.dagger2android;
+package jp.takuji31.dagger2android.example;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,7 +9,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import javax.inject.Inject;
+
+import jp.takuji31.dagger2android.lifecycle.Lifecycles;
+
 public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    B b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        ContextExtensionsKt.getAppComponent(this).inject(this);
     }
 
     @Override

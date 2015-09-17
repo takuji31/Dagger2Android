@@ -27,6 +27,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile 'javax.inject:javax.inject:1'
 }
 buildscript {
     ext.kotlin_version = '0.13.1513'
@@ -40,3 +41,19 @@ buildscript {
 repositories {
     mavenCentral()
 }
+
+def repo = new File(rootDir, "../maven-releases/releases")
+
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository url: "file://${repo.absolutePath}"
+            pom.version = '0.0.1-SNAPSHOT'
+            pom.groupId = 'jp.takuji31.dagger2android'
+            pom.artifactId = 'dagger2android'
+        }
+    }
+}
+

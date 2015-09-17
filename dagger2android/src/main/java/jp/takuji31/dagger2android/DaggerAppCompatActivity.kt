@@ -30,6 +30,11 @@ public abstract class DaggerAppCompatActivity<T : Any>() : AppCompatActivity(), 
         delegate.onPostCreate()
     }
 
+    override fun onDestroy() {
+        delegate.onDestroy()
+        super.onDestroy()
+    }
+
     override fun findFragment(): RetainFragment<T>? {
         @Suppress("UNCHECKED_CAST")
         return supportFragmentManager.findFragmentByTag(TAG) as? RetainFragment<T>
