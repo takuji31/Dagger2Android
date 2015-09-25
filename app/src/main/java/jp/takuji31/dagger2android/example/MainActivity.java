@@ -1,19 +1,21 @@
 package jp.takuji31.dagger2android.example;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import org.jetbrains.annotations.NotNull;
 
 import javax.inject.Inject;
 
-import jp.takuji31.dagger2android.lifecycle.Lifecycles;
+import jp.takuji31.dagger2android.DaggerAppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends DaggerAppCompatActivity<MainComponent> {
 
     @Inject
     B b;
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        ContextExtensionsKt.getAppComponent(this).inject(this);
+        getComponent().inject(this);
     }
 
     @Override
@@ -56,5 +58,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void handleIntent(@NotNull Intent intent) {
+
+    }
+
+    @NotNull
+    @Override
+    public MainComponent createComponent() {
+        return DaggerMainComponent.builder().mainModule(new MainModule(this)).build();
     }
 }

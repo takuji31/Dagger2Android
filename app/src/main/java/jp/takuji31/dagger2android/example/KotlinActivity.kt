@@ -10,6 +10,5 @@ public class KotlinActivity : Activity() {
     lateinit val b : B
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        appComponent.inject(this)
     }
 }

@@ -9,5 +9,6 @@ public interface FragmentStore<T : Any> {
     fun hasFragment(): Boolean {
         return findFragment() != null
     }
+
     fun addFragment(fragment: T)
 }

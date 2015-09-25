@@ -1,14 +1,24 @@
 package jp.takuji31.dagger2android.lifecycle
 
+import android.os.Bundle
+
 /**
  * @author Takuji Nishibayashi
  */
-public object Lifecycles {
+object Lifecycles {
     @JvmStatic
-    fun onDestroy(vararg lifecycles: OnDestroyLifecycle): OnDestroyLifecycle {
-        return object : OnDestroyLifecycle {
+    fun activity(vararg lifecycles: ActivityLifecycle): ActivityLifecycle {
+        return object : ActivityLifecycle {
             override fun onDestroy() {
                 lifecycles.forEach { it.onDestroy() }
+            }
+
+            override fun onSaveInstanceState(outState: Bundle) {
+                lifecycles.forEach { it.onSaveInstanceState(outState = outState) }
+            }
+
+            override fun onRestoreInstanceState(savedInstanceStete: Bundle) {
+                lifecycles.forEach { it.onRestoreInstanceState(savedInstanceStete = savedInstanceStete) }
             }
         }
     }

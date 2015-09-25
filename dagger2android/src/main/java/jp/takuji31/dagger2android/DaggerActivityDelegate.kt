@@ -1,40 +1,61 @@
 package jp.takuji31.dagger2android
 
-import jp.takuji31.dagger2android.component.ActivityComponent
+import android.os.Bundle
+import jp.takuji31.dagger2android.component.ActivityLifecycleComponent
 
 /**
  * Dagger lifecycle delegation class for Activity
  * @author Takuji Nishibayashi
  */
-public class DaggerActivityDelegate<C : Any, F : ComponentStore<C>>(
-        val createComponentListener: CreateComponentListener<C>, val fragmentStore: FragmentStore<F>) {
+class DaggerActivityDelegate<C : Any, F : ComponentStore<C>>(
+        val createComponentListener: CreateComponentListener<C>,
+        val fragmentStore: FragmentStore<F>
+) {
     private lateinit var fragment: F
 
-    public val component: C
-        get() = fragment.component
+    val component: C
+        get() {
+            return fragment.component ?: {
+                val component = createComponentListener.createComponent()
+                fragment.component = component
+                component
+            }()
+        }
 
-    public fun onCreate() {
-
-        @Suppress("UNCHECKED_CAST")
+    fun onCreate(savedInstanceState: Bundle? = null) {
         val f = fragmentStore.findFragment()
         if (f != null) {
             fragment = f
         } else {
             fragment = fragmentStore.createFragment()
-            fragment.component = createComponentListener.createComponent()
+        }
+        val component: C = fragment.component ?: {
+            val c = createComponentListener.createComponent()
+            fragment.component = c
+            c
+        }()
+        if (savedInstanceState != null && component is ActivityLifecycleComponent) {
+            component.activityLifeCycle.onRestoreInstanceState(savedInstanceStete = savedInstanceState)
         }
     }
 
-    public fun onPostCreate() {
+    fun onSaveInstanceState(outState: Bundle?) {
+        val component = this.component
+        if (outState != null && component is ActivityLifecycleComponent) {
+            component.activityLifeCycle.onSaveInstanceState(outState = outState)
+        }
+    }
+
+    fun onPostCreate() {
         if (!fragmentStore.hasFragment()) {
             fragmentStore.addFragment(fragment)
         }
     }
 
-    public fun onDestroy() {
+    fun onDestroy() {
         val component = component
-        if (component is ActivityComponent) {
-            component.onDestroyLifecycle.onDestroy()
+        if (component is ActivityLifecycleComponent) {
+            component.activityLifeCycle.onDestroy()
         }
     }
 }

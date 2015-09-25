@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import kotlin.properties.Delegates
 
 /**
  * @author Takuji Nishibayashi
@@ -19,9 +18,9 @@ public abstract class DaggerAppCompatActivity<T : Any>() : AppCompatActivity(), 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        handleIntent(intent)
+        handleIntent(intent = intent)
 
-        daggerDelegate.onCreate()
+        daggerDelegate.onCreate(savedInstanceState = savedInstanceState)
 
     }
 
@@ -33,6 +32,11 @@ public abstract class DaggerAppCompatActivity<T : Any>() : AppCompatActivity(), 
     override fun onDestroy() {
         daggerDelegate.onDestroy()
         super.onDestroy()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        daggerDelegate.onSaveInstanceState(outState)
+        super.onSaveInstanceState(outState)
     }
 
     override fun findFragment(): RetainFragment<T>? {
@@ -51,7 +55,7 @@ public abstract class DaggerAppCompatActivity<T : Any>() : AppCompatActivity(), 
     abstract fun handleIntent(intent: Intent)
 
     public class RetainFragment<T : Any> : Fragment(), ComponentStore<T> {
-          override lateinit var component: T
+        override var component: T? = null
 
         init {
             retainInstance = true

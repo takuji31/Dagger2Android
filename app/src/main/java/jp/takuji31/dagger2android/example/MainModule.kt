@@ -3,25 +3,25 @@ package jp.takuji31.dagger2android.example
 import android.content.Context
 import dagger.Module
 import dagger.Provides
+import jp.takuji31.dagger2android.lifecycle.ActivityLifecycle
 import jp.takuji31.dagger2android.lifecycle.Lifecycles
-import jp.takuji31.dagger2android.lifecycle.OnDestroyLifecycle
 import javax.inject.Singleton
 
 /**
  * @author Takuji Nishibayashi
  */
 @Module
-public class AppModule(
+public class MainModule(
         context: Context? = null
 ) {
     lateinit val context: Context
-    @Provides @Singleton get
+        @Provides @Singleton get
 
     init {
         this.context = context!!
     }
 
-    @Provides @Singleton fun destroyLifecycle(a : A) : OnDestroyLifecycle {
-        return Lifecycles.onDestroy(a)
+    @Provides @Singleton fun destroyLifecycle(a: A): ActivityLifecycle {
+        return Lifecycles.activity(a)
     }
 }
