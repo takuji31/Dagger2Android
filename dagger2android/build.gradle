@@ -30,7 +30,7 @@ dependencies {
     compile 'javax.inject:javax.inject:1'
 }
 buildscript {
-    ext.kotlin_version = '0.13.1513'
+    ext.kotlin_version = '0.13.1514'
     repositories {
         mavenCentral()
     }
