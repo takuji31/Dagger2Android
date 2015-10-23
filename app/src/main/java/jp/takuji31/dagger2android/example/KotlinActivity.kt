@@ -7,7 +7,7 @@ import android.os.Bundle
  * @author Takuji Nishibayashi
  */
 public class KotlinActivity : Activity() {
-    lateinit val b : B
+    lateinit var b : B
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }

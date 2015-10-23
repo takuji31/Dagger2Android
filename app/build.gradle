@@ -27,8 +27,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.0.1'
-    compile 'com.android.support:design:23.0.1'
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'com.android.support:design:23.1.0'
     compile project(':dagger2android')
     compile 'com.google.dagger:dagger:2.0.1'
     kapt 'com.google.dagger:dagger-compiler:2.0.1'
@@ -37,11 +37,11 @@ dependencies {
 
     androidTestCompile 'com.android.support.test:runner:0.3'
     androidTestCompile 'com.android.support.test:rules:0.3'
-    androidTestCompile 'com.android.support:support-annotations:23.0.1'
+    androidTestCompile 'com.android.support:support-annotations:23.1.0'
     androidTestCompile 'com.squareup.assertj:assertj-android:1.0.1'
 }
 buildscript {
-    ext.kotlin_version = '0.13.1513'
+    ext.kotlin_version = '1.0.0-beta-1038'
     repositories {
         mavenCentral()
     }

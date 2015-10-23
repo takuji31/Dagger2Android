@@ -14,7 +14,7 @@ import javax.inject.Singleton
 public class MainModule(
         context: Context? = null
 ) {
-    lateinit val context: Context
+    lateinit var context: Context
         @Provides @Singleton get
 
     init {
